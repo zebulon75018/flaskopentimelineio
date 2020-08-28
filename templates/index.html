@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Visualisation : {{name}}</title>
+  <link rel='stylesheet' href='/static/vis-timeline-graph2d.min.css'>
+  <style>
+  body,
+html {
+  font-family: sans-serif;
+}
+.vis-item.Gap1 {
+background-color: green;
+}
+.vis-item.Clip1 {
+background-color: orange;
+}
+</style>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<p>
+  Visualisation of : <b> {{name}}</b>
+
+</p>
+
+
+<div class="menu">
+        <input type="button" id="zoomIn" value="Zoom in"/>
+        <input type="button" id="zoomOut" value="Zoom out"/>
+    </div>
+<div id="visualization"></div>
+
+<textarea id="json" cols=50 rows=20></textarea>
+
+<!-- partial -->
+  <script src='/static/vis-timeline-graph2d.min.js'></script>
+  <script>
+var None = "";
+  // DOM element where the Timeline will be attached
+var container = document.getElementById("visualization");
+alldata={}
+{% for d in alldata %}
+alldata[{{d}}] = {{alldata[d]|safe}};
+{% endfor %}
+// Create a DataSet (allows two way data-binding)
+var groups = new vis.DataSet();
+{% for t in data %}
+groups.add({id : {{loop.index}} , content: "{{t}}" });
+{% endfor %}
+
+var items = new vis.DataSet([
+{% for t in data %}
+{% for c in data[t] %}
+{ id: {{c["id"]}}, group:{{c["idseq"]}}, content: "{{c["name"]}}", start: "{{c["startTime"].isoformat()}}",end: "{{c["endTime"].isoformat()}}",className:"{{c["className"]}}"},
+{% endfor %}
+{% endfor %}
+]);
+
+
+// Configuration for the Timeline
+var options = {zoomable: true,zoomKey:"ctrlKey"}; //,showMajorLabels:false};
+
+// Create a Timeline
+var timeline = new vis.Timeline(container);
+timeline.setOptions(options);
+timeline.setGroups(groups);
+timeline.setItems(items);
+
+timeline.on('select',function ( properties ) {
+    var pretty = JSON.stringify(alldata[properties.items[0]], undefined, 4);
+    document.getElementById('json').value = pretty;
+} );
+   document.getElementById('zoomIn').onclick    = function () { timeline.zoomIn( 0.5); };
+    document.getElementById('zoomOut').onclick   = function () { timeline.zoomOut( 0.5); };
+  </script>
+
+
+</body>
+</html>
