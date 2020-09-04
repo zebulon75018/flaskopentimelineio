@@ -34,6 +34,19 @@ background-color: orange;
 
 <textarea id="json" cols=50 rows=20></textarea>
 
+<br/>
+<H2> Html Representation </H2>
+<br/>
+<div style="display:inline-block;width:100%">
+{% for t in dataH %}
+  <div style="display:block-inline">
+{% for c in dataH[t] %}
+<span style="display:inline-block;position: relative;width:{{c["duration"]}}%;left:{{c["startTime"]}}%;background-color:red">{{c["name"]}} </span>
+{% endfor %}
+</div>
+{% endfor %}
+</div>
+
 <!-- partial -->
   <script src='/static/vis-timeline-graph2d.min.js'></script>
   <script>
