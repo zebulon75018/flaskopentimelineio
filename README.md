@@ -1,9 +1,17 @@
 # flaskopentimelineio
 
+(try with Python 3.6.9 (default, Apr 18 2020, 01:56:04)  ) 
+pip -r requirement.txt
 
 python main.py
 A simple flask server that import opentimelineio file and display in timeline ( visjs ) the data.
-There's an URL to display the documentation from thr module.
+The upload page show the plugin of opentimelineio.
+There's an URL to display the documentation from the module /doc string with filter.
+
+
+[![ScreenShot](https://img.youtube.com/vi/p9VW79ShkU0/0.jpg)](https://youtu.be/p9VW79ShkU0)
+
+ 
 
 python mainjson.py 
 A simple flask server that parse .otio file and display in timeline ( visjs ) the data.
