@@ -59,12 +59,8 @@ def submitfile():                      # call method hello
     uploaded_file = request.files['file']
     timeline = otio.adapters.read_from_file(uploaded_file.filename)
 
-    if uploaded_file.filename != '':
-        uploaded_file.save(uploaded_file.filename)
-    with open(uploaded_file.filename) as f:
-        data = json.load(f)
-        dataForVisjs = {}
-        dataForHtml = {}
+    dataForVisjs = {}
+    dataForHtml = {}
 
     currentIndex = 1 # it's for the id in visjs
     indexSeq = 1 # it's for the group in visjs ( 1 is for loop.index jinja )
@@ -105,7 +101,7 @@ def submitfile():                      # call method hello
                             data=dataForVisjs,
                             dataH=dataForHtml,
                             #alldata=alldata,
-                            name=data["name"])
+                            name=timeline.name)
 
 if __name__ == "__main__":        # on running python app.py
     app.run(debug=True)                     # run the flask app
