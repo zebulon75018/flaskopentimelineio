@@ -3,18 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <title>Visualisation : {{name}}</title>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+  <script id="item-template" type="text/x-handlebars-template">
+    <table class="score">
+      <tr>
+        <td colspan="3" class="description">{{description}}</td>
+      </tr>
+      <tr>
+        <td>{{player1}}</td>
+        <th>{{score1}} - {{score2}}</th>
+        <td>{{player2}}</td>
+      </tr>
+      <tr>
+        <td><img src="https://flagpedia.net/data/flags/mini/{{abbr1}}.png" width="31" height="20" alt="{{abbr1}}" /></td>
+        <th></th>
+        <td><img src="https://flagpedia.net/data/flags/mini/{{abbr2}}.png" width="31" height="20" alt="{{abbr2}}" /></td>
+      </tr>
+    </table>
+  </script>
+
+
+
   <link rel='stylesheet' href='/static/vis-timeline-graph2d.min.css'>
   <style>
-  body,
+body,
 html {
   font-family: sans-serif;
 }
-.vis-item.Gap1 {
-background-color: green;
-}
-.vis-item.Clip1 {
-background-color: orange;
-}
+.vis-item.Gap1 {background-color: green;}
+.vis-item.video {background-color: blue;}
+.vis-item.audio  { background-color: orange; }
 </style>
 
 </head>
@@ -34,22 +54,10 @@ background-color: orange;
 
 <textarea id="json" cols=50 rows=20></textarea>
 
-<br/>
-<H2> Html Representation </H2>
-<br/>
-<div style="display:inline-block;width:100%">
-{% for t in dataH %}
-  <div style="display:block-inline">
-{% for c in dataH[t] %}
-<span style="display:inline-block;position: relative;width:{{c["duration"]}}%;left:{{c["startTime"]}}%;background-color:red">{{c["name"]}} </span>
-{% endfor %}
-</div>
-{% endfor %}
-</div>
-
 <!-- partial -->
   <script src='/static/vis-timeline-graph2d.min.js'></script>
   <script>
+
 var None = "";
   // DOM element where the Timeline will be attached
 var container = document.getElementById("visualization");
@@ -69,6 +77,7 @@ var items = new vis.DataSet([
 { id: {{c["id"]}}, group:{{c["idseq"]}}, content: "{{c["name"]}}", start: "{{c["startTime"].isoformat()}}",end: "{{c["endTime"].isoformat()}}",className:"{{c["className"]}}"},
 {% endfor %}
 {% endfor %}
+
 ]);
 
 
@@ -81,14 +90,21 @@ timeline.setOptions(options);
 timeline.setGroups(groups);
 timeline.setItems(items);
 
+// Markers.
+{% for m in dataMarker %}
+  timeline.addCustomTime("{{m["startTime"].isoformat()}}", "mk{{m["id"]}}");
+  timeline.setCustomTimeMarker("{{m["name"]}}", "mk{{m["id"]}}", false);
+{% endfor %}
+
 timeline.on('select',function ( properties ) {
+  // Should be an ajax calls ... 
     var pretty = JSON.stringify(alldata[properties.items[0]], undefined, 4);
     document.getElementById('json').value = pretty;
 } );
-   document.getElementById('zoomIn').onclick    = function () { timeline.zoomIn( 0.5); };
-    document.getElementById('zoomOut').onclick   = function () { timeline.zoomOut( 0.5); };
-  </script>
 
+   document.getElementById('zoomIn').onclick    = function () { timeline.zoomIn( 0.5); };
+   document.getElementById('zoomOut').onclick   = function () { timeline.zoomOut( 0.5); };
+  </script>
 
 </body>
 </html>
