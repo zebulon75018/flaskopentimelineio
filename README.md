@@ -9,6 +9,10 @@ The upload page show the plugin of opentimelineio.
 There's an URL to display the documentation from the module /doc string with filter.
 Show only clip video
 
+![alt text](otio.png "screenshot with premiere_exemple.xml")
+
+
+
 To do show gap and clip audio.
 
 [![ScreenShot](https://img.youtube.com/vi/p9VW79ShkU0/0.jpg)](https://youtu.be/p9VW79ShkU0)
