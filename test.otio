@@ -1,0 +1,231 @@
+[{'code': 'AX003',
+  'cut_item_duration': 12,
+  'edit_in': 28,
+  'edit_out': 39,
+  'id': 11,
+  'type': 'CutItem'},
+ {'code': 'AX004',
+  'cut_item_duration': 25,
+  'edit_in': 40,
+  'edit_out': 64,
+  'id': 12,
+  'type': 'CutItem'},
+ {'code': 'AX005',
+  'cut_item_duration': 17,
+  'edit_in': 65,
+  'edit_out': 81,
+  'id': 13,
+  'type': 'CutItem'},
+ {'code': 'AX006',
+  'cut_item_duration': 14,
+  'edit_in': 82,
+  'edit_out': 95,
+  'id': 14,
+  'type': 'CutItem'},
+ {'code': 'AX001',
+  'cut_item_duration': 14,
+  'edit_in': 1,
+  'edit_out': 14,
+  'id': 15,
+  'type': 'CutItem'},
+ {'code': 'AX002',
+  'cut_item_duration': 13,
+  'edit_in': 15,
+  'edit_out': 27,
+  'id': 16,
+  'type': 'CutItem'}]
+{
+    "OTIO_SCHEMA": "Timeline.1",
+    "metadata": {},
+    "name": "toto",
+    "global_start_time": null,
+    "tracks": {
+        "OTIO_SCHEMA": "Stack.1",
+        "metadata": {},
+        "name": "tracks",
+        "source_range": null,
+        "effects": [],
+        "markers": [],
+        "children": [
+            {
+                "OTIO_SCHEMA": "Track.1",
+                "metadata": {},
+                "name": "titi",
+                "source_range": null,
+                "effects": [],
+                "markers": [],
+                "children": [
+                    {
+                        "OTIO_SCHEMA": "Clip.1",
+                        "metadata": {
+                            "id": 11
+                        },
+                        "name": "AX003",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 24.0,
+                                "value": 12.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 24.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "media_reference": {
+                            "OTIO_SCHEMA": "MissingReference.1",
+                            "metadata": {},
+                            "name": "",
+                            "available_range": null
+                        }
+                    },
+                    {
+                        "OTIO_SCHEMA": "Clip.1",
+                        "metadata": {
+                            "id": 12
+                        },
+                        "name": "AX004",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 24.0,
+                                "value": 25.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 24.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "media_reference": {
+                            "OTIO_SCHEMA": "MissingReference.1",
+                            "metadata": {},
+                            "name": "",
+                            "available_range": null
+                        }
+                    },
+                    {
+                        "OTIO_SCHEMA": "Clip.1",
+                        "metadata": {
+                            "id": 13
+                        },
+                        "name": "AX005",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 24.0,
+                                "value": 17.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 24.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "media_reference": {
+                            "OTIO_SCHEMA": "MissingReference.1",
+                            "metadata": {},
+                            "name": "",
+                            "available_range": null
+                        }
+                    },
+                    {
+                        "OTIO_SCHEMA": "Clip.1",
+                        "metadata": {
+                            "id": 14
+                        },
+                        "name": "AX006",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 24.0,
+                                "value": 14.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 24.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "media_reference": {
+                            "OTIO_SCHEMA": "MissingReference.1",
+                            "metadata": {},
+                            "name": "",
+                            "available_range": null
+                        }
+                    },
+                    {
+                        "OTIO_SCHEMA": "Clip.1",
+                        "metadata": {
+                            "id": 15
+                        },
+                        "name": "AX001",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 24.0,
+                                "value": 14.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 24.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "media_reference": {
+                            "OTIO_SCHEMA": "MissingReference.1",
+                            "metadata": {},
+                            "name": "",
+                            "available_range": null
+                        }
+                    },
+                    {
+                        "OTIO_SCHEMA": "Clip.1",
+                        "metadata": {
+                            "id": 16
+                        },
+                        "name": "AX002",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 24.0,
+                                "value": 13.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 24.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "media_reference": {
+                            "OTIO_SCHEMA": "MissingReference.1",
+                            "metadata": {},
+                            "name": "",
+                            "available_range": null
+                        }
+                    }
+                ],
+                "kind": "Video"
+            }
+        ]
+    }
+}
