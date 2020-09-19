@@ -1,5 +1,7 @@
 # flaskopentimelineio
 
+This github is now use like a sandbox for my contribution to opentimelineio project.
+
 (try with Python 3.6.9 (default, Apr 18 2020, 01:56:04)  ) 
 pip -r requirement.txt
 
