@@ -4,30 +4,11 @@
   <meta charset="UTF-8">
   <title>Visualisation : {{name}}</title>
 
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
-  <script id="item-template" type="text/x-handlebars-template">
-    <table class="score">
-      <tr>
-        <td colspan="3" class="description">{{description}}</td>
-      </tr>
-      <tr>
-        <td>{{player1}}</td>
-        <th>{{score1}} - {{score2}}</th>
-        <td>{{player2}}</td>
-      </tr>
-      <tr>
-        <td><img src="https://flagpedia.net/data/flags/mini/{{abbr1}}.png" width="31" height="20" alt="{{abbr1}}" /></td>
-        <th></th>
-        <td><img src="https://flagpedia.net/data/flags/mini/{{abbr2}}.png" width="31" height="20" alt="{{abbr2}}" /></td>
-      </tr>
-    </table>
-  </script>
-
-
-
   <link rel='stylesheet' href='/static/vis-timeline-graph2d.min.css'>
-  <style>
+  <script src="https://cdn.jsdelivr.net/npm/@json-editor/json-editor@latest/dist/jsoneditor.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<style>
 body,
 html {
   font-family: sans-serif;
@@ -42,7 +23,6 @@ html {
 <!-- partial:index.partial.html -->
 <p>
   Visualisation of : <b> {{name}}</b>
-
 </p>
 
 
@@ -52,31 +32,48 @@ html {
     </div>
 <div id="visualization"></div>
 
-<textarea id="json" cols=50 rows=20></textarea>
+<textarea id="json" cols=50 rows=10></textarea>
+
+<br><hr>
+<h2> Edition of from json otio </h2>
+
+<div id='editor_holder'></div>
+<br>
+<button id='submit'>Submit : otio ouput</button>
+<br><hr>
+<textarea id="otio" cols=50 rows=20></textarea>
 
 <!-- partial -->
   <script src='/static/vis-timeline-graph2d.min.js'></script>
   <script>
 
+    // Initialize the editor with a JSON schema
+  var editor = new JSONEditor(document.getElementById('editor_holder'),
+     { "schema" : {{jsonschema|safe}}
+     }
+  );
+  editor.setValue({{jsonvalue|safe}});
+
+
 var None = "";
   // DOM element where the Timeline will be attached
 var container = document.getElementById("visualization");
 alldata={}
-{% for d in alldata %}
-alldata[{{d}}] = {{alldata[d]|safe}};
-{% endfor %}
+  {% for d in alldata %}
+      alldata[{{d}}] = {{alldata[d]|safe}};
+  {% endfor %}
 // Create a DataSet (allows two way data-binding)
 var groups = new vis.DataSet();
-{% for t in data %}
-groups.add({id : {{loop.index}} , content: "{{t}}" });
-{% endfor %}
+  {% for t in data %}
+      groups.add({id : {{loop.index}} , content: "{{t}}" });
+  {% endfor %}
 
 var items = new vis.DataSet([
-{% for t in data %}
-{% for c in data[t] %}
-{ id: {{c["id"]}}, group:{{c["idseq"]}}, content: "{{c["name"]}}", start: "{{c["startTime"].isoformat()}}",end: "{{c["endTime"].isoformat()}}",className:"{{c["className"]}}"},
-{% endfor %}
-{% endfor %}
+  {% for t in data %}
+    {% for c in data[t] %}
+        { id: {{c["id"]}}, group:{{c["idseq"]}}, content: "{{c["name"]}}", start: "{{c["startTime"].isoformat()}}",end: "{{c["endTime"].isoformat()}}",className:"{{c["className"]}}"},
+    {% endfor %}
+  {% endfor %}
 
 ]);
 
@@ -98,12 +95,27 @@ timeline.setItems(items);
 
 timeline.on('select',function ( properties ) {
   // Should be an ajax calls ... 
-    var pretty = JSON.stringify(alldata[properties.items[0]], undefined, 4);
-    document.getElementById('json').value = pretty;
+  $.ajax({
+  url: "/clip/"+properties.items[0],
+  cache: false,
+  success: function(html){
+    $("#json").text(html);
+  }
+});
+   // var pretty = JSON.stringify(alldata[properties.items[0]], undefined, 4);
+   // document.getElementById('json').value = pretty;
 } );
 
    document.getElementById('zoomIn').onclick    = function () { timeline.zoomIn( 0.5); };
    document.getElementById('zoomOut').onclick   = function () { timeline.zoomOut( 0.5); };
+
+
+  // Hook up the submit button to log to the console
+  document.getElementById('submit').addEventListener('click',function() {
+        // Get the value from the editor
+        $("#otio").text(JSON.stringify(editor.getValue(),undefined, 4));
+      });
+
   </script>
 
 </body>
