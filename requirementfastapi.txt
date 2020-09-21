@@ -1,0 +1,16 @@
+aiofiles==0.5.0
+click==7.1.2
+dataclasses==0.7
+fastapi==0.61.1
+h11==0.9.0
+httptools==0.1.1
+Jinja2==2.11.2
+MarkupSafe==1.1.1
+OpenTimelineIO==0.13.0
+pkg-resources==0.0.0
+pyaaf2==1.4.0
+pydantic==1.6.1
+starlette==0.13.6
+uvicorn==0.11.8
+uvloop==0.14.0
+websockets==8.1
