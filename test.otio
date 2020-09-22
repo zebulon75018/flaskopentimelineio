@@ -1,7 +1,16 @@
 {
     "OTIO_SCHEMA": "Timeline.1",
-    "metadata": {},
-    "name": "toto",
+    "metadata": {
+        "shotgun": {
+            "code": "HSM_SATL",
+            "duration": 95,
+            "fps": 24.0,
+            "id": 3,
+            "sg_cut_type": null,
+            "type": "Cut"
+        }
+    },
+    "name": "HSM_SATL",
     "global_start_time": null,
     "tracks": {
         "OTIO_SCHEMA": "Stack.1",
@@ -14,7 +23,7 @@
             {
                 "OTIO_SCHEMA": "Track.1",
                 "metadata": {},
-                "name": "titi",
+                "name": "track",
                 "source_range": null,
                 "effects": [],
                 "markers": [],
@@ -22,119 +31,17 @@
                     {
                         "OTIO_SCHEMA": "Clip.1",
                         "metadata": {
-                            "id": 11
-                        },
-                        "name": "AX003",
-                        "source_range": {
-                            "OTIO_SCHEMA": "TimeRange.1",
-                            "duration": {
-                                "OTIO_SCHEMA": "RationalTime.1",
-                                "rate": 24.0,
-                                "value": 12.0
-                            },
-                            "start_time": {
-                                "OTIO_SCHEMA": "RationalTime.1",
-                                "rate": 24.0,
-                                "value": 0.0
+                            "shotgun": {
+                                "code": "AX001",
+                                "cut_item_duration": 14,
+                                "edit_in": 1,
+                                "edit_out": 14,
+                                "id": 15,
+                                "type": "CutItem",
+                                "version.Version.id": 6720,
+                                "version.Version.sg_path_to_frames": "/hsm_demo_media/HSM/HSM_SATL_0010/ANIM/HSM_SATL_0010_TD.1001-1022#.jpg",
+                                "version.Version.sg_path_to_movie": "/hsm_demo_media/HSM/HSM_SATL_0010/TD/HSM_SATL_0010_TD.mov"
                             }
-                        },
-                        "effects": [],
-                        "markers": [],
-                        "media_reference": {
-                            "OTIO_SCHEMA": "MissingReference.1",
-                            "metadata": {},
-                            "name": "",
-                            "available_range": null
-                        }
-                    },
-                    {
-                        "OTIO_SCHEMA": "Clip.1",
-                        "metadata": {
-                            "id": 12
-                        },
-                        "name": "AX004",
-                        "source_range": {
-                            "OTIO_SCHEMA": "TimeRange.1",
-                            "duration": {
-                                "OTIO_SCHEMA": "RationalTime.1",
-                                "rate": 24.0,
-                                "value": 25.0
-                            },
-                            "start_time": {
-                                "OTIO_SCHEMA": "RationalTime.1",
-                                "rate": 24.0,
-                                "value": 0.0
-                            }
-                        },
-                        "effects": [],
-                        "markers": [],
-                        "media_reference": {
-                            "OTIO_SCHEMA": "MissingReference.1",
-                            "metadata": {},
-                            "name": "",
-                            "available_range": null
-                        }
-                    },
-                    {
-                        "OTIO_SCHEMA": "Clip.1",
-                        "metadata": {
-                            "id": 13
-                        },
-                        "name": "AX005",
-                        "source_range": {
-                            "OTIO_SCHEMA": "TimeRange.1",
-                            "duration": {
-                                "OTIO_SCHEMA": "RationalTime.1",
-                                "rate": 24.0,
-                                "value": 17.0
-                            },
-                            "start_time": {
-                                "OTIO_SCHEMA": "RationalTime.1",
-                                "rate": 24.0,
-                                "value": 0.0
-                            }
-                        },
-                        "effects": [],
-                        "markers": [],
-                        "media_reference": {
-                            "OTIO_SCHEMA": "MissingReference.1",
-                            "metadata": {},
-                            "name": "",
-                            "available_range": null
-                        }
-                    },
-                    {
-                        "OTIO_SCHEMA": "Clip.1",
-                        "metadata": {
-                            "id": 14
-                        },
-                        "name": "AX006",
-                        "source_range": {
-                            "OTIO_SCHEMA": "TimeRange.1",
-                            "duration": {
-                                "OTIO_SCHEMA": "RationalTime.1",
-                                "rate": 24.0,
-                                "value": 14.0
-                            },
-                            "start_time": {
-                                "OTIO_SCHEMA": "RationalTime.1",
-                                "rate": 24.0,
-                                "value": 0.0
-                            }
-                        },
-                        "effects": [],
-                        "markers": [],
-                        "media_reference": {
-                            "OTIO_SCHEMA": "MissingReference.1",
-                            "metadata": {},
-                            "name": "",
-                            "available_range": null
-                        }
-                    },
-                    {
-                        "OTIO_SCHEMA": "Clip.1",
-                        "metadata": {
-                            "id": 15
                         },
                         "name": "AX001",
                         "source_range": {
@@ -153,16 +60,39 @@
                         "effects": [],
                         "markers": [],
                         "media_reference": {
-                            "OTIO_SCHEMA": "MissingReference.1",
+                            "OTIO_SCHEMA": "ExternalReference.1",
                             "metadata": {},
                             "name": "",
-                            "available_range": null
+                            "available_range": {
+                                "OTIO_SCHEMA": "TimeRange.1",
+                                "duration": {
+                                    "OTIO_SCHEMA": "RationalTime.1",
+                                    "rate": 24.0,
+                                    "value": 13.0
+                                },
+                                "start_time": {
+                                    "OTIO_SCHEMA": "RationalTime.1",
+                                    "rate": 24.0,
+                                    "value": 1.0
+                                }
+                            },
+                            "target_url": "file:////hsm_demo_media/HSM/HSM_SATL_0010/TD/HSM_SATL_0010_TD.mov "
                         }
                     },
                     {
                         "OTIO_SCHEMA": "Clip.1",
                         "metadata": {
-                            "id": 16
+                            "shotgun": {
+                                "code": "AX002",
+                                "cut_item_duration": 13,
+                                "edit_in": 15,
+                                "edit_out": 27,
+                                "id": 16,
+                                "type": "CutItem",
+                                "version.Version.id": 6722,
+                                "version.Version.sg_path_to_frames": "/hsm_demo_media/HSM/HSM_SATL_0015/ANIM/HSM_SATL_0015_TD.1001-1018#.jpg",
+                                "version.Version.sg_path_to_movie": "/hsm_demo_media/HSM/HSM_SATL_0015/TD/HSM_SATL_0015_TD.mov"
+                            }
                         },
                         "name": "AX002",
                         "source_range": {
@@ -181,10 +111,227 @@
                         "effects": [],
                         "markers": [],
                         "media_reference": {
-                            "OTIO_SCHEMA": "MissingReference.1",
+                            "OTIO_SCHEMA": "ExternalReference.1",
                             "metadata": {},
                             "name": "",
-                            "available_range": null
+                            "available_range": {
+                                "OTIO_SCHEMA": "TimeRange.1",
+                                "duration": {
+                                    "OTIO_SCHEMA": "RationalTime.1",
+                                    "rate": 24.0,
+                                    "value": 12.0
+                                },
+                                "start_time": {
+                                    "OTIO_SCHEMA": "RationalTime.1",
+                                    "rate": 24.0,
+                                    "value": 15.0
+                                }
+                            },
+                            "target_url": "file:////hsm_demo_media/HSM/HSM_SATL_0015/TD/HSM_SATL_0015_TD.mov "
+                        }
+                    },
+                    {
+                        "OTIO_SCHEMA": "Clip.1",
+                        "metadata": {
+                            "shotgun": {
+                                "code": "AX003",
+                                "cut_item_duration": 12,
+                                "edit_in": 28,
+                                "edit_out": 39,
+                                "id": 11,
+                                "type": "CutItem",
+                                "version.Version.id": 6724,
+                                "version.Version.sg_path_to_frames": "/hsm_demo_media/HSM/HSM_SATL_0020/ANIM/HSM_SATL_0020_TD.1001-1028#.jpg",
+                                "version.Version.sg_path_to_movie": "/hsm_demo_media/HSM/HSM_SATL_0020/TD/HSM_SATL_0020_TD.mov"
+                            }
+                        },
+                        "name": "AX003",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 24.0,
+                                "value": 12.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 24.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "media_reference": {
+                            "OTIO_SCHEMA": "ExternalReference.1",
+                            "metadata": {},
+                            "name": "",
+                            "available_range": {
+                                "OTIO_SCHEMA": "TimeRange.1",
+                                "duration": {
+                                    "OTIO_SCHEMA": "RationalTime.1",
+                                    "rate": 24.0,
+                                    "value": 11.0
+                                },
+                                "start_time": {
+                                    "OTIO_SCHEMA": "RationalTime.1",
+                                    "rate": 24.0,
+                                    "value": 28.0
+                                }
+                            },
+                            "target_url": "file:////hsm_demo_media/HSM/HSM_SATL_0020/TD/HSM_SATL_0020_TD.mov "
+                        }
+                    },
+                    {
+                        "OTIO_SCHEMA": "Clip.1",
+                        "metadata": {
+                            "shotgun": {
+                                "code": "AX004",
+                                "cut_item_duration": 25,
+                                "edit_in": 40,
+                                "edit_out": 64,
+                                "id": 12,
+                                "type": "CutItem",
+                                "version.Version.id": 6726,
+                                "version.Version.sg_path_to_frames": "/hsm_demo_media/HSM/HSM_SATL_0030/ANIM/HSM_SATL_0030_TD.1001-1036#.jpg",
+                                "version.Version.sg_path_to_movie": "/hsm_demo_media/HSM/HSM_SATL_0030/TD/HSM_SATL_0030_TD.mov"
+                            }
+                        },
+                        "name": "AX004",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 24.0,
+                                "value": 25.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 24.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "media_reference": {
+                            "OTIO_SCHEMA": "ExternalReference.1",
+                            "metadata": {},
+                            "name": "",
+                            "available_range": {
+                                "OTIO_SCHEMA": "TimeRange.1",
+                                "duration": {
+                                    "OTIO_SCHEMA": "RationalTime.1",
+                                    "rate": 24.0,
+                                    "value": 24.0
+                                },
+                                "start_time": {
+                                    "OTIO_SCHEMA": "RationalTime.1",
+                                    "rate": 24.0,
+                                    "value": 40.0
+                                }
+                            },
+                            "target_url": "file:////hsm_demo_media/HSM/HSM_SATL_0030/TD/HSM_SATL_0030_TD.mov "
+                        }
+                    },
+                    {
+                        "OTIO_SCHEMA": "Clip.1",
+                        "metadata": {
+                            "shotgun": {
+                                "code": "AX005",
+                                "cut_item_duration": 17,
+                                "edit_in": 65,
+                                "edit_out": 81,
+                                "id": 13,
+                                "type": "CutItem",
+                                "version.Version.id": 6727,
+                                "version.Version.sg_path_to_frames": "/hsm_demo_media/HSM/HSM_SATL_0040/ANIM/HSM_SATL_0040_ANIM.1001-1023#.jpg",
+                                "version.Version.sg_path_to_movie": "/hsm_demo_media/HSM/HSM_SATL_0040/ANIM/HSM_SATL_0040_ANIM.mov"
+                            }
+                        },
+                        "name": "AX005",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 24.0,
+                                "value": 17.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 24.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "media_reference": {
+                            "OTIO_SCHEMA": "ExternalReference.1",
+                            "metadata": {},
+                            "name": "",
+                            "available_range": {
+                                "OTIO_SCHEMA": "TimeRange.1",
+                                "duration": {
+                                    "OTIO_SCHEMA": "RationalTime.1",
+                                    "rate": 24.0,
+                                    "value": 16.0
+                                },
+                                "start_time": {
+                                    "OTIO_SCHEMA": "RationalTime.1",
+                                    "rate": 24.0,
+                                    "value": 65.0
+                                }
+                            },
+                            "target_url": "file:////hsm_demo_media/HSM/HSM_SATL_0040/ANIM/HSM_SATL_0040_ANIM.mov "
+                        }
+                    },
+                    {
+                        "OTIO_SCHEMA": "Clip.1",
+                        "metadata": {
+                            "shotgun": {
+                                "code": "AX006",
+                                "cut_item_duration": 14,
+                                "edit_in": 82,
+                                "edit_out": 95,
+                                "id": 14,
+                                "type": "CutItem",
+                                "version.Version.id": 6729,
+                                "version.Version.sg_path_to_frames": "/hsm_demo_media/HSM/HSM_SATL_0060/ANIM/HSM_SATL_0060_ANIM.1001-1014#.jpg",
+                                "version.Version.sg_path_to_movie": "/hsm_demo_media/HSM/HSM_SATL_0060/ANIM/HSM_SATL_0060_ANIM.mov"
+                            }
+                        },
+                        "name": "AX006",
+                        "source_range": {
+                            "OTIO_SCHEMA": "TimeRange.1",
+                            "duration": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 24.0,
+                                "value": 14.0
+                            },
+                            "start_time": {
+                                "OTIO_SCHEMA": "RationalTime.1",
+                                "rate": 24.0,
+                                "value": 0.0
+                            }
+                        },
+                        "effects": [],
+                        "markers": [],
+                        "media_reference": {
+                            "OTIO_SCHEMA": "ExternalReference.1",
+                            "metadata": {},
+                            "name": "",
+                            "available_range": {
+                                "OTIO_SCHEMA": "TimeRange.1",
+                                "duration": {
+                                    "OTIO_SCHEMA": "RationalTime.1",
+                                    "rate": 24.0,
+                                    "value": 13.0
+                                },
+                                "start_time": {
+                                    "OTIO_SCHEMA": "RationalTime.1",
+                                    "rate": 24.0,
+                                    "value": 82.0
+                                }
+                            },
+                            "target_url": "file:////hsm_demo_media/HSM/HSM_SATL_0060/ANIM/HSM_SATL_0060_ANIM.mov "
                         }
                     }
                 ],
